@@ -2,7 +2,6 @@ package packages
 
 import (
 	"context"
-	"log"
 	"os"
 	"time"
 
@@ -13,27 +12,30 @@ import (
 
 var (
 	dbclient *mongo.Client
-	ctx      context.Context
 )
 
+/*
+	@created at 25 May 2021
+	Method for processing Mongo URI returning Mongo Client
+*/
 func Mongo(url string) *mongo.Client {
 	client, err := mongo.NewClient(options.Client().ApplyURI(url))
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 
 	err = client.Connect(ctx)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
-	defer client.Disconnect(ctx)
+	defer cancel()
 
 	err = client.Ping(ctx, readpref.Primary())
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 	return client

@@ -1,7 +1,18 @@
 package routers
 
-import "github.com/jacky-htg/api-go/06-http-code/controllers"
+import (
+	"TransferSaldo/src/controllers"
+	"net/http"
+)
 
 type route struct {
 	ctrl controllers.Controllers
+}
+
+type Route interface {
+	RouterGroup() http.Handler
+}
+
+func NewRouter(ctrl controllers.Controllers) Route {
+	return &route{ctrl: ctrl}
 }
