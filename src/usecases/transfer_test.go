@@ -15,8 +15,8 @@ import (
 func init() {
 	env := map[string]string{
 		"SERVER_PORT": "8080",
-		"MONGO_DB":    "LinkAja",
-		"MONGO_URI":   "mongodb+srv://teredict:25285282@teredict.jkdyu.mongodb.net/LinkAja?retryWrites=true&w=majority",
+		"MONGO_DB":    "TransferSaldo",
+		"MONGO_URI":   "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false",
 		"CORS_HEADER": "x-api-key,Authorization,Content-Type,Origin,Accept,Access-Control-Allow-Headers,Access-Control-Request-Method,Access-Control-Request-Headers,Access-Control-Allow-Origin",
 		"CORS_METHOD": "OPTION,GET,PUT,POST,DELETE",
 		"CORS_ORIGIN": "*",

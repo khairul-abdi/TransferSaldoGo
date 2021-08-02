@@ -95,7 +95,7 @@ OR we can just use image I've uploaded to docker hub public repository by using 
 ```
 After we finished building our application, we are now able to build the container by using the following command :
 ```
-docker container create --name transfersaldo-container -p 8080:8080 -e SERVER_PORT=8080 -e MONGO_DB=transfersaldo -e MONGO_URI="mongodb://localhost:27017/" -e CORS_HEADER=x-api-key,Authorization,Content-Type,Origin,Accept,Access-Control-Allow-Headers,Access-Control-Request-Method,Access-Control-Request-Headers,Access-Control-Allow-Origin -e CORS_METHOD=OPTION,GET,PUT,POST,DELETE -e CORS_ORIGIN='*' kabdi384/transfersaldo:beta
+docker container create --name transfersaldo-container -p 8080:8080 -e SERVER_PORT=8080 -e MONGO_DB=TransferSaldo -e MONGO_URI="mongodb://localhost:27017/" -e CORS_HEADER=x-api-key,Authorization,Content-Type,Origin,Accept,Access-Control-Allow-Headers,Access-Control-Request-Method,Access-Control-Request-Headers,Access-Control-Allow-Origin -e CORS_METHOD=OPTION,GET,PUT,POST,DELETE -e CORS_ORIGIN='*' kabdi384/transfersaldo:beta
 ```
 And then we can start our container by using this following command:
 ```

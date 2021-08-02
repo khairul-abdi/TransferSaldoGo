@@ -1,14 +1,14 @@
 version: "3.7"
 
 services:
-    linkaja-container: 
-        container_name: linkaja-container
-        image: kabdi384/linkaja:beta
+    transfersaldo-container: 
+        container_name: transfersaldo-container
+        image: kabdi384/transfersaldo:beta
         ports: 
             - 8080:8080
         environment: 
             - SERVER_PORT=8080
-            - MONGO_DB=LinkAja
+            - MONGO_DB=TransferSaldo
             - MONGO_URI=mongodb://localhost:27017/
             - CORS_HEADER=x-api-key,Authorization,Content-Type,Origin,Accept,Access-Control-Allow-Headers,Access-Control-Request-Method,Access-Control-Request-Headers,Access-Control-Allow-Origin
             - CORS_METHOD=GET,PUT,POST,DELETE
